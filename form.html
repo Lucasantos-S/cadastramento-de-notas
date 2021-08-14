@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Notas de aluno</title>
+</head>
+<body>
+    <header>
+        <h1>Nota final de alunos</h1>
+    </header>
+
+    <form id="form">
+        <div id="campo">
+            <div id="nome">
+                <p>Nome:</p>
+                <input type="text" name="nome" id="fname">
+            </div>
+
+            <div id="sobrenome">
+                <p>Sobrenome:</p>
+                <input type="text" name="nome" id="sname">
+            </div>  
+        </div>
+
+        <div id="dados">
+
+            <div id="data">
+                <p>Data de Nascimento:</p>
+                <input type="date" name="data" id="fdata">
+            </div>
+
+            <div id="turma">
+                <p>Turma:</p>
+                <input type="text" name="turma" id="fturma" >
+            </div>  
+
+        </div>
+
+
+        <section>   
+
+            <div id="nota">
+                <div>
+                    Nota: <input type="number" name="nota" id="fnota">
+                </div>
+                
+
+        </section>
+          
+
+        <div id="botao">
+            <input type="button" value="Finalizar" name="botao" onclick="finalizar()">
+        </div>
+    </form>
+
+    <div id="res">
+
+    </div>
+
+    
+
+<script src="script.js"></script>
+</body>
+</html>
