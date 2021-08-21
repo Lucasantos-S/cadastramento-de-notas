@@ -5,99 +5,78 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background: #fafbfc;
 }
 
 header{
-    text-align: center;
-    
-}
-
-form {
-    background: beige;
-    height: 200px;
-    width: 350px;
-    margin: 30px auto 0px auto;
-    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.466);
-    border-radius: 5px;
-   
-}
-#campo ,#dados{
-    display: flex;
-    
-}
-
-#campo {
-    padding: 10px;
-    
-}
-#sobrenome {
-    margin-left: 10px;
-}
-
-#campo,#dados, p {
-    margin-right: 5px;
-}
-
-
-#nome, #sobrenome,  input {
-    width: 90px;
-   
-    height: 10px;
-    font-size: 10px;
-    
-    
-}
-#nome, #sobrenome {
-    padding: 20px;
-}
-
-#nome, #sobrenome,#data,#turma{
-    display: flex;
-    justify-content: space-between;
-    
-
-}
-
-div#dados{
-   font-size: 10px;
-   margin-left: 40px;
-  
-}
-#data{
-    margin-left: -10px;
-}
-
-#data input{
-    width: 110px;
-    
-}
-#turma{
-    margin-left: 10px;
-}
-#turma input{
-    width: 20px;
-}
-
-section #nota {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-}
-
-
-div#botao{
-    margin: 30px 100px 0px 120px;
-}
-#botao input{
-    height: 30px;
-}
-
-#res {
-    background: black;
+    background: blueviolet;
     color: white;
-    width: 500px;
-    height:200px;
-    margin-left: 200px;
-    margin-top: 20px;
+    text-align: center;
 }
 
+header,h1 {
+    padding: 2px;
+}
+main{
+    padding: 30px 50px;
+}
+.card {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 5px;
+
+}
+.lineInput {
+    display: grid;
+    margin-bottom: 10px;
+}
+input{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    outline: 0;
+}
+button{
+    padding: 10px;
+    border: 0 solid;
+    background: blueviolet;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: 0;
+
+    transition: all ease 0.3s;
+}
+
+button:hover{
+    background: rgb(163, 86, 235);
+}
+
+table{
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+table th{
+    background: rgb(223, 219, 219);
+    
+}
+table th,td{
+   
+    padding: 1px 5px;
+    text-align: left;
+
+}
+table td img {
+    width: 22px;
+    
+    padding: 13px;
+    
+    
+}
+
+.center {
+    text-align: center;
+}
