@@ -17,10 +17,11 @@ class Aluno {
             if(this.editId == null) {
                 this.adicionar(aluno);
             } else{
-                this.adicionar(this.editId, aluno);
+                this.atualizar(this.editId, aluno);
             }
         }
         this.listaTabela();
+        this.limpar();
         
         
     }
@@ -44,7 +45,7 @@ class Aluno {
             td_aluno.innerText = this.arrayAlunos[i].nomeAluno;
             td_turma.innerText = this.arrayAlunos[i].turmaAluno;
             td_nota.innerText = this.arrayAlunos[i].notaAluno;
-            td_data.innerText = this.arrayAlunos[i].dataAluno;
+            td_data.innerText = this.arrayAlunos[i].data;
             td_professor.innerText = this.arrayAlunos[i].professorAluno;
 
             td_id.classList.add('center')
@@ -76,6 +77,7 @@ class Aluno {
     }
 
     adicionar(aluno) {
+        
         this.arrayAlunos.push(aluno);
         this.id++
 
@@ -87,7 +89,7 @@ class Aluno {
         aluno.nomeAluno = document.getElementById('aluno').value;
         aluno.turmaAluno = document.getElementById('turma').value;
         aluno.notaAluno = document.getElementById('nota').value;
-        aluno.dataAluno = document.getElementById('data').value;
+        aluno.data = document.getElementById('data').value;
         aluno.professorAluno = document.getElementById('professor').value;
 
 
@@ -129,7 +131,16 @@ class Aluno {
     
 
     limpar(){
-        alert('limpar')
+        document.getElementById('aluno').value = ''
+        document.getElementById('turma').value = ''
+        document.getElementById('nota').value = ''
+        document.getElementById('data').value = ''
+        document.getElementById('professor').value = ''
+
+        document.getElementById('btn1').innerText = 'Salvar';
+        document.getElementById('btn2').innerText = 'Limpar';
+
+        this.editId = null
     }
 
     atualizar(id, aluno){
@@ -138,7 +149,7 @@ class Aluno {
                 this.arrayAlunos[i].nomeAluno = aluno.nomeAluno;
                 this.arrayAlunos[i].turmaAluno = aluno.turmaAluno;
                 this.arrayAlunos[i].notaAluno = aluno.notaAluno;
-                this.arrayAlunos[i].dataAluno = aluno.dataAluno;
+                this.arrayAlunos[i].data = aluno.data;
                 this.arrayAlunos[i].professorAluno = aluno.professorAluno;
             }
         }
@@ -150,13 +161,17 @@ class Aluno {
         document.getElementById('aluno').value = dados.nomeAluno;
         document.getElementById('turma').value = dados.turmaAluno;
         document.getElementById('nota').value = dados.notaAluno;
-        document.getElementById('data').value = dados.dataAluno;
+        document.getElementById('data').value = dados.data;
         document.getElementById('professor').value = dados.professorAluno; 
+
+        document.getElementById('btn1').innerText= 'Atualizar'
+        document.getElementById('btn2').innerText= 'Cancelar'
 
         
     }
 
     deletar(id){
+
 
     }
 
