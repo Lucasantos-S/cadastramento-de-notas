@@ -53,20 +53,28 @@ class Aluno {
 
             let imgEdit = document.createElement('img')
             imgEdit.src = 'img/edit.png'
-            imgEdit.setAttribute("onclick" , "aluno.prepararEdicao("+JSON.stringify(this.arrayAlunos[i])+")");
+            imgEdit.setAttribute( "onclick", "aluno.prepararEdicao("+JSON.stringify(this.arrayAlunos[i])+")");
+            imgEdit.title = 'Editar'
+            
+            
+            
+            
             
 
 
             let imgDelet = document.createElement('img')
             imgDelet.src = 'img/delet.png'
-            imgDelet.setAttribute("onclick", "aluno.deletar("+this.arrayAlunos[i].id+")")
-           
+            imgDelet.setAttribute("onclick", "aluno.deletar("+this.arrayAlunos[i].id+")" )
+            imgDelet.title = 'Excluir'
+            
 
             
-            td_acoes.appendChild(imgEdit )
+            td_acoes.appendChild(imgEdit)
             td_acoes.appendChild(imgDelet)
             td_acoes.style.width = '100px'
             td_acoes.classList.add('center')
+            
+            
 
             console.log(this.arrayAlunos)
 
@@ -85,12 +93,28 @@ class Aluno {
 
     lerDados(){
         let aluno = {}
+        
         aluno.id = this.id;
         aluno.nomeAluno = document.getElementById('aluno').value;
         aluno.turmaAluno = document.getElementById('turma').value;
         aluno.notaAluno = document.getElementById('nota').value;
-        aluno.data = document.getElementById('data').value;
         aluno.professorAluno = document.getElementById('professor').value;
+
+        aluno.data = document.getElementById('data').value;
+
+        /*Formatando data e inserindo automaticamente*/ 
+
+        let data = new Date()
+        function formatarData(data){
+            let newDate = new Date(data);
+            return `${newDate.getDate()} / ${newDate.getMonth()+1} / ${newDate.getFullYear()}`;
+        }
+
+        aluno.data = formatarData(data)
+
+        
+       
+
 
 
         return aluno;
@@ -108,9 +132,8 @@ class Aluno {
             msg = '- Informe a turma'
         }
 
-        if(aluno.notaAluno == '') {
-            msg = '- Informe a nota do Aluno'
-        }
+        
+        
         if(aluno.dataAluno == '') {
             msg = '- Informe a data de lançamento'
         }
@@ -169,6 +192,7 @@ class Aluno {
 
         
     }
+    
 
     deletar(id){
 
