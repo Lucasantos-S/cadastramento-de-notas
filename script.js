@@ -89,7 +89,7 @@ class Aluno {
         aluno.nomeAluno = document.getElementById('aluno').value;
         aluno.turmaAluno = document.getElementById('turma').value;
         aluno.notaAluno = document.getElementById('nota').value;
-        aluno.data = document.getElementById('data').value;
+        aluno.data = document.getElementById('data').value = getHours()
         aluno.professorAluno = document.getElementById('professor').value;
 
 
@@ -172,9 +172,21 @@ class Aluno {
 
     deletar(id){
 
+        
+        if(confirm('Deseja deletar a nota do aluno' + id +'?')) {
+        let tbody = document.getElementById('tbody');
+
+        for(let i = 0; i < this.arrayAlunos.length; i++) {
+            if(this.arrayAlunos[i].id == id) {
+                this.arrayAlunos.splice(i, 1);
+                tbody.deleteRow(i);
+            }
+        }
+
 
     }
 
+}
 }
 
 let aluno = new Aluno()
