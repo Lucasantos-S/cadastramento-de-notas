@@ -89,7 +89,7 @@ class Aluno {
         aluno.nomeAluno = document.getElementById('aluno').value;
         aluno.turmaAluno = document.getElementById('turma').value;
         aluno.notaAluno = document.getElementById('nota').value;
-        aluno.data = document.getElementById('data').value = getHours()
+        aluno.data = document.getElementById('data').value;
         aluno.professorAluno = document.getElementById('professor').value;
 
 
